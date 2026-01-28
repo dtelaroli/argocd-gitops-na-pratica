@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-exemplo-config
+data:
+  APP_NAME: "app-exemplo"
+  APP_ENV: "dev"
