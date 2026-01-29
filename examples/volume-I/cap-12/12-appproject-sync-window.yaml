@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-estudos
+  namespace: argocd
+spec:
+  syncWindows:
+    - kind: deny
+      schedule: "0 9 * * 1-5"
+      duration: 8h
+      applications:
+        - "*"

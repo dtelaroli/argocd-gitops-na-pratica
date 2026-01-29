@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-time-a
+  namespace: argocd
+spec:
+  description: Project do time A
+  sourceRepos:
+    - https://github.com/org/time-a-repo.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: time-a

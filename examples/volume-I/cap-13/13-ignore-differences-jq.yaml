@@ -1,0 +1,2 @@
+jqPathExpressions:
+  - .spec.template.spec.containers[].env[].value

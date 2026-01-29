@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: apps-exemplo
+spec:
+  generators:
+    - list:
+        elements:
+          - env: dev
+            namespace: app-dev
+          - env: hml
+            namespace: app-hml
+          - env: prd
+            namespace: app-prd
+  template:
+    metadata:
+      name: app-{{env}}
+    spec:
+      project: project-estudos
+      source:
+        repoURL: https://github.com/org/repo.git
+        targetRevision: main
+        path: k8s/app
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: {{namespace}}

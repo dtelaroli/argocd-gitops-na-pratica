@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-prd
+  namespace: argocd
+spec:
+  description: Project para ambiente de producao
+  sourceRepos:
+    - https://github.com/org/repo.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: app-prd

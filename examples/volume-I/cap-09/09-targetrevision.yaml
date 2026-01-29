@@ -1,0 +1,4 @@
+source:
+  repoURL: https://github.com/org/repo.git
+  targetRevision: v1.2.0
+  path: k8s/app-exemplo

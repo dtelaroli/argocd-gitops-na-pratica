@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-vendas-dev
+  namespace: argocd
+spec:
+  description: Project do dominio vendas no dev
+  sourceRepos:
+    - https://github.com/org/vendas-repo.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: vendas-dev
